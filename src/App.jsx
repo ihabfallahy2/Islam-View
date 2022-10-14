@@ -13,6 +13,7 @@ import {
   StatHelpText,
 } from '@chakra-ui/react'
 import { Input, InputRightElement, InputGroup } from '@chakra-ui/react'
+import { GiPrayerBeads } from "react-icons/gi";
 //chakra ui imports
 
 function App() {
@@ -35,13 +36,6 @@ function App() {
     IAPI.IslamPrayerActualTime("mula").then((data) => setSalat(data))
 
   }, []);
-
-  // const [extended, setExtended] = useState(0)
-
-  // useEffect(() => {
-
-  //   IAPI.IslamPrayerTimeExtended(obj).then((data) => setExtended(data))
-  // }, []);
 
   const [current, setCurrent] = useState(0)
   const [currentCondition, setCurrentCondition] = useState(0)
@@ -80,11 +74,11 @@ function App() {
 
   return (
     <>
-        <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={header} boxShadow='inner'>
-          <Flex align="center" ml={3} mr={2}>
-            <Heading as='h2' size='2xl'>Islamic View</Heading>
+        <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={footer} boxShadow='dark-lg'>
+          <Flex align="center" ml={3} mr={2} >
+            <Heading ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
             <Spacer />
-            <Button bg="teal.100" onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
+            <Button bg={color} onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
           </Flex>
         </Box>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={body} boxShadow='dark-lg'>
@@ -138,7 +132,7 @@ function App() {
         </Box>
       </Box>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={footer} boxShadow='dark-lg'>
-        <Heading>Footer</Heading>
+        <Heading><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
       </Box>
     </>
   )
