@@ -4,7 +4,7 @@ import * as WAPI from './API/WeatherApi';
 
 
 //chakra ui imports
-import { Box, Heading, Badge, Button, Flex, Spacer, Icon, Image } from '@chakra-ui/react'
+import { Box, Heading, Button, Flex, Spacer, Icon, Image } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 import { BiAnalyse } from "react-icons/bi";
 import {
@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { Input, InputRightElement, InputGroup } from '@chakra-ui/react'
 import { GiPrayerBeads } from "react-icons/gi";
+import { ButtonGroup } from '@chakra-ui/react'
 //chakra ui imports
 
 function App() {
@@ -70,18 +71,18 @@ function App() {
   const wcolor = "#B3B7EE";
   const footer = "#A2A3BB";
 
-  const [width , setWidth] = useState("32%");
+  const [width, setWidth] = useState("32%");
 
   return (
     <>
-        <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={footer} boxShadow='dark-lg'>
-          <Flex align="center" ml={3} mr={2} >
-            <Heading ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
-            <Spacer />
-            <Button bg={color} onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
-          </Flex>
-        </Box>
-      <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={body} boxShadow='dark-lg'>
+      <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
+        <Flex align="center" ml={3} mr={2} >
+          <Heading ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+          <Spacer />
+          <Button bg={color} onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
+        </Flex>
+      </Box>
+      <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={body} boxShadow='dark-lg'>
         <Box bg={color} borderRadius="lg" justify="center" align="center" p={4} m={12} >
           <Heading as='h2' size='2xl'>Weather</Heading>
           <Image
@@ -104,14 +105,14 @@ function App() {
               <StatHelpText>Updated {forecastDate.uno}</StatHelpText>
             </Stat>
           </Box>
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={width} boxShadow='2xl'>
+          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
             <Heading>{forecastDate.dos}</Heading>
             <Stat mt={2}>
               <StatLabel>{forecasting.dos}</StatLabel>
               <StatHelpText>Updated {forecastDate.dos}</StatHelpText>
             </Stat>
           </Box>
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={width} boxShadow='2xl'>
+          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
             <Heading>{forecastDate.tres}</Heading>
             <Stat mt={2}>
               <StatLabel>{forecasting.tres}</StatLabel>
@@ -131,8 +132,15 @@ function App() {
           </Stat>
         </Box>
       </Box>
-      <Box borderRadius="lg" justify="center" align="center" p={4} m={4}  bg={footer} boxShadow='dark-lg'>
-        <Heading><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+      <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
+        <Flex >
+        <Heading m={2} ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+        <Spacer />
+        <Box>
+        <Button colorScheme='whiteAlpha' m={2}>Github</Button>
+        <Button colorScheme='whiteAlpha'm={2}>Linkedin</Button>
+        </Box>
+        </Flex>
       </Box>
     </>
   )
