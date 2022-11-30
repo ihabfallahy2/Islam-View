@@ -1,10 +1,14 @@
+import React from 'react'
 import { useState, useEffect } from "react";
 import * as IAPI from './API/IslamicApi';
 import * as WAPI from './API/WeatherApi';
-
-
 //chakra ui imports
-import { Box, Heading, Button, Flex, Spacer, Icon, Image } from '@chakra-ui/react'
+
+import { Tooltip } from '@chakra-ui/react'
+import { GiNewShoot } from "react-icons/gi";
+import { GoOctoface } from "react-icons/go";
+import { FaLinkedinIn } from "react-icons/fa";
+import { Box, Heading, Button, Flex, Spacer, Icon, Image} from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 import { BiAnalyse } from "react-icons/bi";
 import {
@@ -12,23 +16,11 @@ import {
   StatLabel,
   StatHelpText,
 } from '@chakra-ui/react'
-import { Input, InputRightElement, InputGroup } from '@chakra-ui/react'
 import { GiPrayerBeads } from "react-icons/gi";
-import { ButtonGroup } from '@chakra-ui/react'
+import { Show, Hide } from '@chakra-ui/react'
 //chakra ui imports
 
 function App() {
-
-  let date = "16-09-2022";
-  let location = "mula";
-  let method = "5";
-
-  let obj = {
-    fecha: date,
-    localizacion: location,
-    metodo: method
-  }
-
 
   const [salat, setSalat] = useState([])
 
@@ -40,7 +32,6 @@ function App() {
 
   const [current, setCurrent] = useState(0)
   const [currentCondition, setCurrentCondition] = useState(0)
-  const [forecast, setForecast] = useState(0)
   const [forecasting, setForecasting] = useState(0)
   const [forecastDate, setForecastDate] = useState(0)
   const [local, setLocation] = useState(0)
@@ -48,22 +39,20 @@ function App() {
   useEffect(() => { WAPI.getWeather().then((data) => setCurrent(data.current)) }, []);
   useEffect(() => { WAPI.getWeather().then((data) => setCurrentCondition(data.current.condition)) }, []);
 
-  useEffect(() => { WAPI.getWeather().then((data) => setForecast(data.forecast)) }, []);
   useEffect(() => { WAPI.getForecast().then((data) => setForecasting(data.forecast)) }, []);
   useEffect(() => { WAPI.getForecast().then((data) => setForecastDate(data.date)) }, []);
 
   useEffect(() => { WAPI.getWeather().then((data) => setLocation(data.location)) }, []);
   const toast = useToast();
   const tp = {
-    title: 'The Location for the Weather & Prayer Times is',
-    variant: 'subtle',
-    description: "Prayer: " + salat.address + " / Weather: " + local.name + ", " + local.region + ", " + local.country,
+    title: 'Weather & Prayer Times app is currently under development',
+    variant: 'left-accent',
+    description: "Version : 1.2.2",
     status: 'info',
-    duration: 9000,
-    isClosable: true
+    duration: 6000,
+    isClosable: true,
+    alternativeTitle: local.name + " " + local.region + " " + local.country,
   }
-  console.log(salat)
-  console.log(local)
 
   const header = "#FBF9FF";
   const body = "#9395D3";
@@ -71,13 +60,13 @@ function App() {
   const wcolor = "#B3B7EE";
   const footer = "#A2A3BB";
 
-  const [width, setWidth] = useState("32%");
+  const [width, setWidth] = useState("50%");
 
   return (
     <>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
         <Flex align="center" ml={3} mr={2} >
-          <Heading ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+          <Heading fontSize={{ base: '24px', md: '40px', lg: '56px' }}><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
           <Spacer />
           <Button bg={color} onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
         </Flex>
@@ -99,29 +88,33 @@ function App() {
         <Flex p={4} m={12}>
 
           <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
-            <Heading>{forecastDate.uno}</Heading>
+            <Hide above='md'>
+              <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
+            </Hide>
+            <Hide below='md'>
+              <Heading>{forecastDate.uno}</Heading>
+            </Hide>
             <Stat mt={2}>
               <StatLabel>{forecasting.uno}</StatLabel>
               <StatHelpText>Updated {forecastDate.uno}</StatHelpText>
             </Stat>
           </Box>
           <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
-            <Heading>{forecastDate.dos}</Heading>
+            <Hide above='md'>
+              <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
+            </Hide>
+            <Hide below='md'>
+              <Heading>{forecastDate.dos}</Heading>
+            </Hide>
             <Stat mt={2}>
               <StatLabel>{forecasting.dos}</StatLabel>
               <StatHelpText>Updated {forecastDate.dos}</StatHelpText>
             </Stat>
           </Box>
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
-            <Heading>{forecastDate.tres}</Heading>
-            <Stat mt={2}>
-              <StatLabel>{forecasting.tres}</StatLabel>
-              <StatHelpText>Updated {forecastDate.tres}</StatHelpText>
-            </Stat>
-          </Box>
         </Flex>
+
         <Box bg={color} borderRadius="lg" justify="center" align="center" p={4} m={12} boxShadow='2xl'>
-          <Heading as='h2' size='2xl'>Prayer Times</Heading>
+          <Heading as='h2' fontSize={{ base: '24px', md: '40px', lg: '56px' }}>Prayer Times</Heading>
           <Stat mt={4}>
             <StatLabel>shurooq {salat.shurooq}</StatLabel>
             <StatLabel>dhuhr {salat.dhuhr}</StatLabel>
@@ -134,12 +127,16 @@ function App() {
       </Box>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
         <Flex >
-        <Heading m={2} ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
-        <Spacer />
-        <Box>
-        <Button colorScheme='whiteAlpha' m={2}>Github</Button>
-        <Button colorScheme='whiteAlpha'm={2}>Linkedin</Button>
-        </Box>
+          <Heading m={2} ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+          <Spacer />
+          <Box>
+          <Tooltip label='Github'>
+            <Button colorScheme='blackAlpha' m={2} onClick={event =>  window.location.href='https://github.com/ihabfallahy2'}><Icon as={GoOctoface} w={8} h={8} color="blue.20" /></Button>
+          </Tooltip>
+          <Tooltip label='Linkedin'>
+            <Button colorScheme='blackAlpha' m={2} onClick={event =>  window.location.href='https://www.linkedin.com/in/ihab-fallahy-aallam/'}><Icon as={FaLinkedinIn} w={8} h={8} color="blue.20" /></Button>
+          </Tooltip>
+          </Box>
         </Flex>
       </Box>
     </>
