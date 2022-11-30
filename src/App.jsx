@@ -8,7 +8,7 @@ import { Tooltip } from '@chakra-ui/react'
 import { GiNewShoot } from "react-icons/gi";
 import { GoOctoface } from "react-icons/go";
 import { FaLinkedinIn } from "react-icons/fa";
-import { Box, Heading, Button, Flex, Spacer, Icon, Image} from '@chakra-ui/react'
+import { Box, Heading, Button, Flex, Spacer, Icon, Image } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 import { BiAnalyse } from "react-icons/bi";
 import {
@@ -85,9 +85,9 @@ function App() {
             <StatHelpText>Updated {current.last_updated}</StatHelpText>
           </Stat>
         </Box>
-        <Flex p={4} m={12}>
+        <Flex p={4} m={12} justify="center">
 
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={[300, 400, 500]} boxShadow='2xl'>
+          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={[300, 400, 500]} boxShadow='2xl'>
             <Hide above='md'>
               <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
             </Hide>
@@ -99,9 +99,9 @@ function App() {
               <StatHelpText>Updated {forecastDate.uno}</StatHelpText>
             </Stat>
           </Box>
-          <Hide below='sm'>
+          <Hide below='596px'>
 
-            <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={[300, 400, 500]} boxShadow='2xl'>
+            <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={[300, 400, 500]} boxShadow='2xl'>
               <Hide above='md'>
                 <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
               </Hide>
@@ -114,7 +114,22 @@ function App() {
               </Stat>
             </Box>
           </Hide>
-          
+
+          <Hide below='1024px'>
+
+          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={[300, 400, 500]} boxShadow='2xl'>
+            <Hide above='md'>
+              <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
+            </Hide>
+            <Hide below='md'>
+              <Heading>{forecastDate.tres}</Heading>
+            </Hide>
+            <Stat mt={2}>
+              <StatLabel>{forecasting.tres}</StatLabel>
+              <StatHelpText>Updated {forecastDate.tres}</StatHelpText>
+            </Stat>
+          </Box>
+          </Hide>
         </Flex>
 
         <Box bg={color} borderRadius="lg" justify="center" align="center" p={4} m={12} boxShadow='2xl'>
@@ -131,16 +146,16 @@ function App() {
       </Box>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
         <Flex ml={3} mr={2}>
-          <Show below="sm" ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" fontSize={{ base: '24px', md: '40px', lg: '45px' }}/></Show>
+          <Show below="sm" ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" fontSize={{ base: '24px', md: '40px', lg: '45px' }} /></Show>
           <Hide below="sm"><Heading fontSize={{ base: '24px', md: '40px', lg: '45px' }}><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading></Hide>
           <Spacer />
           <Box>
-          <Tooltip label='Github'>
-            <Button colorScheme='blackAlpha' m={2} onClick={event =>  window.location.href='https://github.com/ihabfallahy2'}><Icon as={GoOctoface} w={8} h={8} color="blue.20" /></Button>
-          </Tooltip>
-          <Tooltip label='Linkedin'>
-            <Button colorScheme='blackAlpha' m={2} onClick={event =>  window.location.href='https://www.linkedin.com/in/ihab-fallahy-aallam/'}><Icon as={FaLinkedinIn} w={8} h={8} color="blue.20" /></Button>
-          </Tooltip>
+            <Tooltip label='Github'>
+              <Button colorScheme='blackAlpha' m={2} onClick={event => window.location.href = 'https://github.com/ihabfallahy2'}><Icon as={GoOctoface} w={8} h={8} color="blue.20" /></Button>
+            </Tooltip>
+            <Tooltip label='Linkedin'>
+              <Button colorScheme='blackAlpha' m={2} onClick={event => window.location.href = 'https://www.linkedin.com/in/ihab-fallahy-aallam/'}><Icon as={FaLinkedinIn} w={8} h={8} color="blue.20" /></Button>
+            </Tooltip>
           </Box>
         </Flex>
       </Box>
