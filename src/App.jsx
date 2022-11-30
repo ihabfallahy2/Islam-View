@@ -66,7 +66,7 @@ function App() {
     <>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
         <Flex align="center" ml={3} mr={2} >
-          <Heading fontSize={{ base: '24px', md: '40px', lg: '56px' }}><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+          <Heading fontSize={{ base: '24px', md: '40px', lg: '45px' }}><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
           <Spacer />
           <Button bg={color} onClick={() => toast(tp)}> <Icon as={BiAnalyse} w={8} h={8} color="blue.20" /></Button>
         </Flex>
@@ -87,7 +87,7 @@ function App() {
         </Box>
         <Flex p={4} m={12}>
 
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
+          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={[300, 400, 500]} boxShadow='2xl'>
             <Hide above='md'>
               <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
             </Hide>
@@ -99,18 +99,22 @@ function App() {
               <StatHelpText>Updated {forecastDate.uno}</StatHelpText>
             </Stat>
           </Box>
-          <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4} w={width} boxShadow='2xl'>
-            <Hide above='md'>
-              <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
-            </Hide>
-            <Hide below='md'>
-              <Heading>{forecastDate.dos}</Heading>
-            </Hide>
-            <Stat mt={2}>
-              <StatLabel>{forecasting.dos}</StatLabel>
-              <StatHelpText>Updated {forecastDate.dos}</StatHelpText>
-            </Stat>
-          </Box>
+          <Hide below='sm'>
+
+            <Box bg={wcolor} borderRadius="lg" justify="center" align="center" p={4} m={4}  w={[300, 400, 500]} boxShadow='2xl'>
+              <Hide above='md'>
+                <Box><Icon as={GiNewShoot} w={8} h={8} color="blue.20" /></Box>
+              </Hide>
+              <Hide below='md'>
+                <Heading>{forecastDate.dos}</Heading>
+              </Hide>
+              <Stat mt={2}>
+                <StatLabel>{forecasting.dos}</StatLabel>
+                <StatHelpText>Updated {forecastDate.dos}</StatHelpText>
+              </Stat>
+            </Box>
+          </Hide>
+          
         </Flex>
 
         <Box bg={color} borderRadius="lg" justify="center" align="center" p={4} m={12} boxShadow='2xl'>
@@ -126,8 +130,9 @@ function App() {
         </Box>
       </Box>
       <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={footer} boxShadow='dark-lg'>
-        <Flex >
-          <Heading m={2} ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading>
+        <Flex ml={3} mr={2}>
+          <Show below="sm" ><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" fontSize={{ base: '24px', md: '40px', lg: '45px' }}/></Show>
+          <Hide below="sm"><Heading fontSize={{ base: '24px', md: '40px', lg: '45px' }}><Icon as={GiPrayerBeads} w={8} h={8} color="blue.20" /> Islam View</Heading></Hide>
           <Spacer />
           <Box>
           <Tooltip label='Github'>
