@@ -20,6 +20,9 @@ import { GiPrayerBeads } from "react-icons/gi";
 import { Show, Hide } from '@chakra-ui/react'
 //chakra ui imports
 
+/**
+* This is the main application.
+*/
 function App() {
 
   const [salat, setSalat] = useState([])
@@ -30,12 +33,19 @@ function App() {
 
   }, []);
 
+  /**
+  *Returns the current state of the function.
+  */
   const [current, setCurrent] = useState(0)
   const [currentCondition, setCurrentCondition] = useState(0)
   const [forecasting, setForecasting] = useState(0)
   const [forecastDate, setForecastDate] = useState(0)
   const [local, setLocation] = useState(0)
 
+  /**
+  *This is a function that sets the weather current & currentCondition & location.
+  *This is a function that sets the forecast general & date.
+  */
   useEffect(() => { WAPI.getWeather().then((data) => setCurrent(data.current)) }, []);
   useEffect(() => { WAPI.getWeather().then((data) => setCurrentCondition(data.current.condition)) }, []);
 
@@ -43,6 +53,7 @@ function App() {
   useEffect(() => { WAPI.getForecast().then((data) => setForecastDate(data.date)) }, []);
 
   useEffect(() => { WAPI.getWeather().then((data) => setLocation(data.location)) }, []);
+  
   const toast = useToast();
   const tp = {
     title: 'Weather & Prayer Times app is currently under development',
@@ -163,4 +174,7 @@ function App() {
   )
 }
 
+/**
+* export default app for the application
+*/
 export default App
