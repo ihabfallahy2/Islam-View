@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import * as IAPI from './API/IslamicApi';
 import * as WAPI from './API/WeatherApi';
+import * as CONF from './CONFIGMAP/config-details.json';
 //chakra ui imports
 
 import { Tooltip } from '@chakra-ui/react'
@@ -58,7 +59,7 @@ function App() {
   const tp = {
     title: 'Weather & Prayer Times app is currently under development',
     variant: 'left-accent',
-    description: "Version : 1.2.2",
+    description: "Version : " + CONF.proyect_version,
     status: 'info',
     duration: 6000,
     isClosable: true,
