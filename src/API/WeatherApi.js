@@ -38,6 +38,11 @@ export async function getForecast() {
 				"uno" : data.forecast.forecastday[0].day.condition.text,
 				"dos" : data.forecast.forecastday[1].day.condition.text,	
 				"tres" : data.forecast.forecastday[2].day.condition.text,
+			},
+			"icon":{
+				"uno" : data.forecast.forecastday[0].day.condition.icon,
+				"dos" : data.forecast.forecastday[1].day.condition.icon,	
+				"tres" : data.forecast.forecastday[2].day.condition.icon,
 			}
 		})
 

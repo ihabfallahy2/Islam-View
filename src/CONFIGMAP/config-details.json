@@ -1,4 +1,15 @@
 {
-    "proyect_version" : "1.3.0",
-    "proyect_name" : "Islamic View"
+    "configuration" : {
+        "proyect_version" : "1.3.0",
+        "proyect_name" : "Islamic View",
+        "proyect_current_state" : "Weather & Prayer Times app is currently under development",
+        "github" : "https://github.com/ihabfallahy2",
+        "linkedin" : "https://www.linkedin.com/in/ihab-fallahy-aallam/"
+    },
+    "styles" : {
+        "body" : "#9395D3",
+        "color" : "#B3B7EE",
+        "wcolor" : "#B3B7EE",
+        "footer" : "#A2A3BB"
+    }
 }
