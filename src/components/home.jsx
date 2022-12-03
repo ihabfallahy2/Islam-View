@@ -49,7 +49,7 @@ export function Home(CONF) {
     useEffect(() => { WAPI.getForecast().then((data) => setForecastIcon(data.icon)) }, []);
 
 
-    console.log(window.screen.availWidth)
+    // console.log(window.screen.availWidth)
     return (
         <>
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
