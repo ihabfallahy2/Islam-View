@@ -1,8 +1,10 @@
 import React from 'react'
+import { Routes, Route } from "react-router-dom";
 
-import {Home} from './components/home';
-import {Header} from './components/header';
-import {Footer} from './components/footer';
+import { Home } from './components/home';
+import { Quran } from './components/quran';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
 
 /**
 *This function is used to import the config map.
@@ -16,11 +18,14 @@ function App() {
 
   return (
     <>
-      <Header {...CONF}/>
+      <Header {...CONF} />
 
-      <Home {...CONF}/>
+      <Routes>
+        <Route path="/" element={ <Home {...CONF}/>} />
+        <Route path="quran" element={<Quran {...CONF}/>} />
+      </Routes>
 
-      <Footer {...CONF}/>
+      <Footer {...CONF} />
     </>
   )
 }

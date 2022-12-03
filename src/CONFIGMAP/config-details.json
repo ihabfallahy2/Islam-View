@@ -10,6 +10,30 @@
         "body" : "#9395D3",
         "color" : "#B3B7EE",
         "wcolor" : "#B3B7EE",
-        "footer" : "#A2A3BB"
+        "footer" : "#A2A3BB",
+        "quran" : "#e7eaf6"
+    },
+    "APIS" : {
+        
+    },
+    "DEPECRATED_APIS" : {
+        "quran" : "http://api.alquran.cloud/v1/quran/en.asad",
+        "quran_issue" : "mas de 1000ms de media por llamad, lo que ralentizaba la aplicacion completa"
+    },
+    "QURAN" : {
+        "Quran_text_only" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/quran.json",
+        "Quran_English_transliteration" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/quran_transliteration.json",
+        "ar" : {
+            "sig" : "Arabic",
+            "endpoint" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/index.json"
+        },
+        "en" : {
+            "sig" : "English",
+            "endpoint" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/en/index.json"
+        },
+        "es " : {
+            "sig" : "Spanish",
+            "endpoint" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/es/index.json"
+        }
     }
 }
