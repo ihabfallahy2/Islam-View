@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-
+import { Tooltip } from '@chakra-ui/react'
 /**
 *This function is used to import Islamic & weather Api.
 *This function is used to import the config map.
@@ -13,7 +13,11 @@ import * as WAPI from '../API/WeatherApi';
 */
 import { Hide, Show } from '@chakra-ui/react'
 import { Stat, StatLabel, StatHelpText } from '@chakra-ui/react'
-import { Box, Heading, Flex, Image } from '@chakra-ui/react'
+import { Box, Heading, Flex, Image, Button, Icon } from '@chakra-ui/react'
+
+import { Link } from "react-router-dom";
+
+import { FaQuran } from "react-icons/fa";
 
 export function Home(CONF) {
 
@@ -202,6 +206,13 @@ export function Home(CONF) {
                         </Box>
                     </Flex>
                 </Show>
+                <Tooltip label='Quran'>
+                    <Link to={"quran"}>
+                        <Box bg={CONF.styles.color} borderRadius="lg" justify="center" align="center" p={2} m={20} boxShadow='2xl'>
+                            <Button bg={CONF.styles.color}><Icon as={FaQuran} w={8} h={8} color="blue.20" /></Button>
+                        </Box>
+                    </Link>
+                </Tooltip>
 
                 <Box bg={CONF.styles.color} borderRadius="lg" justify="center" align="center" p={4} m={12} boxShadow='2xl'>
                     <Heading as='h2' fontSize={{ base: '24px', md: '40px', lg: '56px' }}>Prayer Times</Heading>
