@@ -1,6 +1,6 @@
 {
     "configuration" : {
-        "proyect_version" : "1.3.0",
+        "proyect_version" : "2.0.0",
         "proyect_name" : "Islamic View",
         "proyect_current_state" : "Weather & Prayer Times app is currently under development",
         "github" : "https://github.com/ihabfallahy2",
@@ -23,10 +23,7 @@
     "QURAN" : {
         "Quran_text_only" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/quran.json",
         "Quran_English_transliteration" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/quran_transliteration.json",
-        "ar" : {
-            "sig" : "Arabic",
-            "endpoint" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/index.json"
-        },
+        "chapter" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/{}.json",
         "en" : {
             "sig" : "English",
             "endpoint" : "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/en/index.json"
