@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { Tooltip } from '@chakra-ui/react'
-import { Box, Hide, Button, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
+import { Box, Hide, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 import * as QUR from '../API/QuranApi';
 
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight} from "react-icons/md";
+
+import { GoHome } from "react-icons/go";
 
 import {
     Table,
@@ -28,24 +30,16 @@ export function Quran(CONF) {
         <>
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.quran} boxShadow='dark-lg'>
                 <Flex align="center" justify="center" ml={3} mr={2} >
-
                     <Link to={"/"}>
                         <Tooltip label='Home'>
                             <Box>
-                                <Icon as={MdKeyboardArrowLeft} w={10} h={10} color="blue.20" />
+                                <Icon as={GoHome} w={7} h={7} color="blue.20" />
                             </Box>
                         </Tooltip>
                     </Link>
                     <Spacer />
                     <Heading>{"QURAN"}</Heading>
                     <Spacer />
-                    <Link to={"/quran"}>
-                        <Tooltip label='Quran'>
-                            <Box>
-                                <Icon as={MdKeyboardArrowRight} w={8} h={8} color="blue.20" />
-                            </Box>
-                        </Tooltip>
-                    </Link>
                 </Flex>
             </Box>
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.quran} boxShadow='dark-lg'>

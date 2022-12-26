@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Divider, Box, Heading, Tooltip, Button, Icon, Spacer } from '@chakra-ui/react'
+import { Divider, Box, Heading, Tooltip, Icon, Spacer } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 import {
     List,
@@ -8,10 +8,12 @@ import {
     Flex
 } from '@chakra-ui/react'
 
+/**
+*import react icons
+*/
 import { useParams } from 'react-router-dom';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-
-
+import { GoHome } from "react-icons/go";
+import { FaQuran } from "react-icons/fa";
 import { MdCrop32 } from "react-icons/md";
 
 import * as QUR from '../API/QuranApi';
@@ -34,7 +36,7 @@ export function Accord(CONF) {
                     <Link to={"/quran"}>
                         <Tooltip label='Quran'>
                             <Box>
-                                <Icon as={MdKeyboardArrowLeft} w={8} h={8} color="blue.20" />
+                                <Icon as={FaQuran} w={8} h={8} color="blue.20" />
                             </Box>
                         </Tooltip>
                     </Link>
@@ -44,7 +46,7 @@ export function Accord(CONF) {
                     <Link to={"/"}>
                         <Tooltip label='Home'>
                             <Box>
-                                <Icon as={MdKeyboardArrowRight} w={8} h={8} color="blue.20" />
+                                <Icon as={GoHome} w={8} h={8} color="blue.20" />
                             </Box>
                         </Tooltip>
                     </Link>
