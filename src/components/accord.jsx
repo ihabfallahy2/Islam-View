@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Divider, Box, Heading, Tooltip, Icon, Spacer } from '@chakra-ui/react'
+import { Text, Box, Heading, Tooltip, Icon, Spacer } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 import {
     List,
@@ -52,18 +52,24 @@ export function Accord(CONF) {
                     </Link>
                 </Flex>
             </Box>
-            <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.quran} boxShadow='dark-lg'>
+            <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
                 {chapter.map((data) => (
                     <List spacing={3} justify="left" align="left" key={data.id}>
                         <>
+                        <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
                             <ListItem key={data.id}>
+                                <Text fontSize='4xl'>
                                 <ListIcon as={MdCrop32} color='green.500' />
                                 {data.text}
-                                <Divider />
+                                </Text>
+                                <br />
+                                <br />
+                                <Text fontSize='4xl'>
                                 <ListIcon as={MdCrop32} color='green.500' />
                                 {data.transliteration}
+                                </Text>
                             </ListItem>
-                            <Divider />
+                        </Box>
                         </>
                     </List>
                 ))}
