@@ -1,25 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import { Tooltip } from '@chakra-ui/react'
-import { Box, Hide, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
+import { Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 import * as QUR from '../API/QuranApi';
 
-import { MdKeyboardArrowRight} from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { GoHome } from "react-icons/go";
 
-import {
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableContainer,
-} from '@chakra-ui/react'
 
 export function Quran(CONF) {
 
@@ -42,67 +32,21 @@ export function Quran(CONF) {
                     <Spacer />
                 </Flex>
             </Box>
-            <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.quran} boxShadow='dark-lg'>
-                <TableContainer>
-                    <Table size='md'>
-                        <Thead>
-                            <Tr>
-                                <Hide below="600px">
-                                    <Th>name</Th>
-                                </Hide>
-                                <Th>transliteration</Th>
-                                <Hide below="600px">
-                                    <Th>translation</Th>
-                                </Hide>
-                                <Th></Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {
-                                quran.map((data) => (
-                                    <Tr key={data.id}>
-                                        <Hide below="600px">
-                                            <Td>
-                                                <Link to={"chapter/" + data.id}>
-                                                    {data.name}
-                                                </Link>
-                                            </Td>
-                                        </Hide >
-                                        <Td>
-                                            <Link to={"chapter/" + data.id}>
-                                                {data.transliteration}
-                                            </Link>
-                                        </Td>
-                                        <Hide below="600px">
-                                            <Td>
-                                                <Link to={"chapter/" + data.id}>
-                                                    {data.translation}
-                                                </Link>
-                                            </Td>
-                                        </Hide>
-                                        <Spacer />
-                                        <Td>
-                                            <Link to={"chapter/" + data.id}>
-                                                <Tooltip label={data.transliteration}>
-                                                    <Icon as={MdKeyboardArrowRight} color="blue.20" />
-                                                </Tooltip>
-                                            </Link>
-                                        </Td>
-                                    </Tr>
-                                ))
-                            }
+            <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
+                {
+                    quran.map((data) => (
+                        <Link to={"chapter/" + data.id}>
+                            <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
+                            <Text fontSize='4xl'>
+                                <Flex>
+                                {data.transliteration} <Spacer/> <Icon as={MdKeyboardArrowRight} color="blue.20" />
+                                </Flex>
+                            </Text>
+                            </Box>
+                        </Link>
 
-                        </Tbody>
-                        <Tfoot>
-                            <Tr>
-                                <Th>name</Th>
-                                <Th>transliteration</Th>
-                                <Th>translation</Th>
-                                <Th></Th>
-                            </Tr>
-                        </Tfoot>
-                    </Table>
-                </TableContainer>
+                    ))
+                }
             </Box>
         </>
     )
