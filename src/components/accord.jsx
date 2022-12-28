@@ -52,19 +52,19 @@ export function Accord(CONF) {
                     </Link>
                 </Flex>
             </Box>
-            <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
+            <Box borderRadius="lg" justify="center" align="center" p={2} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
                 {chapter.map((data) => (
                     <List spacing={3} justify="left" align="left" key={data.id}>
                         <>
-                        <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
+                        <Box borderRadius="lg" justify="center" align="left" p={2} m={3} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
                             <ListItem key={data.id}>
-                                <Text fontSize='4xl'>
+                                <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
                                 <ListIcon as={MdCrop32} color='green.500' />
                                 {data.text}
                                 </Text>
                                 <br />
                                 <br />
-                                <Text fontSize='4xl'>
+                                <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
                                 <ListIcon as={MdCrop32} color='green.500' />
                                 {data.transliteration}
                                 </Text>
