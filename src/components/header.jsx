@@ -2,13 +2,10 @@ import React from 'react'
 import { useToast } from '@chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react'
 
-
 import { Box, Heading, Button, Flex, Spacer, Icon , Hide , Show} from '@chakra-ui/react'
 
 import { GiPrayerBeads } from "react-icons/gi";
 import { BiAnalyse } from "react-icons/bi";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { Link } from "react-router-dom";
 
 
 export function Header(CONF) {

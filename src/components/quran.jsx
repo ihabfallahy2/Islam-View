@@ -1,15 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { Tooltip } from '@chakra-ui/react'
-import { Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
+
 import { Link } from "react-router-dom";
 
-import * as QUR from '../API/QuranApi';
+import { Tooltip } from '@chakra-ui/react'
+import { Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
 
 import { MdKeyboardArrowRight } from "react-icons/md";
-
 import { GoHome } from "react-icons/go";
 
+import * as QUR from '../API/QuranApi';
 
 export function Quran(CONF) {
 
@@ -37,8 +37,8 @@ export function Quran(CONF) {
                     quran.map((data) => (
                         <Link to={"chapter/" + data.id}>
                             <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
-                            <Text fontSize='4xl'>
-                                <Flex>
+                            <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
+                                <Flex align="center">
                                 {data.transliteration} <Spacer/> <Icon as={MdKeyboardArrowRight} color="blue.20" />
                                 </Flex>
                             </Text>
