@@ -16,7 +16,6 @@ import { Stat, StatLabel, StatHelpText } from '@chakra-ui/react'
 import { Box, Heading, Flex, Image, Button, Icon } from '@chakra-ui/react'
 
 import { Link } from "react-router-dom";
-
 import { FaQuran } from "react-icons/fa";
 
 export function Home(CONF) {

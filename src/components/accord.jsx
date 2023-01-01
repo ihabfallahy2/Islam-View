@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
-import { Text, Box, Heading, Tooltip, Icon, Spacer } from '@chakra-ui/react'
+
+import { Text, Box, Heading, Tooltip, Icon, Spacer, List, ListItem, ListIcon, Flex } from '@chakra-ui/react'
+
 import { Link } from "react-router-dom";
-import {
-    List,
-    ListItem,
-    ListIcon,
-    Flex
-} from '@chakra-ui/react'
 
 /**
 *import react icons
