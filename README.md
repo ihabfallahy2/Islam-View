@@ -8,7 +8,7 @@
 
 
 # Islam View
-Islam View is a View For Global Weather and Islamic Prayer Time
+Islam View is a Global Weather and Islamic Prayer Time view.
 ## Clone
 Use the package manager [npm](https://www.npmjs.com/) to clone Islam View's repo.
 
