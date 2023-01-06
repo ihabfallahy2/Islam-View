@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 
-import { Text, Box, Heading, Tooltip, Icon, Spacer, List, ListItem, ListIcon, Flex } from '@chakra-ui/react'
+import ScrollToTop from "react-scroll-to-top";
 
-import { Link } from "react-router-dom";
+import { Text, Box, Heading, Tooltip, Icon, Spacer, List, ListItem, ListIcon, Flex , Button} from '@chakra-ui/react'
+
+import { Link, useParams } from "react-router-dom";
 
 /**
 *import react icons
 */
-import { useParams } from 'react-router-dom';
 import { GoHome } from "react-icons/go";
-import { FaQuran } from "react-icons/fa";
+import { FaQuran , FaChevronLeft, FaChevronRight} from "react-icons/fa";
 import { MdCrop32 } from "react-icons/md";
 
 import * as QUR from '../API/QuranApi';
@@ -25,6 +26,7 @@ export function Accord(CONF) {
 
     return (
         <>
+        <ScrollToTop smooth color={CONF.COLORS.green} width="40" height="20"/>
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.quran} boxShadow='dark-lg'>
 
                 <Flex align="center" justify="center" ml={3} mr={2} >

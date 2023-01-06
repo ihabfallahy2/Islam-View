@@ -1,6 +1,5 @@
-import React from 'react'
-import { useState, useEffect } from "react";
-import { Tooltip } from '@chakra-ui/react'
+import React, { useState, useEffect } from 'react'
+import { Tooltip, Box, Heading, Flex, Image, Button, Icon, Hide, Show, Stat, StatLabel, StatHelpText } from '@chakra-ui/react'
 /**
 *This function is used to import Islamic & weather Api.
 *This function is used to import the config map.
@@ -11,9 +10,6 @@ import * as WAPI from '../API/WeatherApi';
 /**
 *import chakra ui react components
 */
-import { Hide, Show } from '@chakra-ui/react'
-import { Stat, StatLabel, StatHelpText } from '@chakra-ui/react'
-import { Box, Heading, Flex, Image, Button, Icon } from '@chakra-ui/react'
 
 import { Link } from "react-router-dom";
 import { FaQuran } from "react-icons/fa";
@@ -35,7 +31,7 @@ export function Home(CONF) {
     /**
     *Will be used in the future to show the location setup
     */
-    const [local, setLocation] = useState({})
+    const [, setLocation] = useState({})
 
     /**
      *This is a function that sets the weather current & currentCondition & location.
