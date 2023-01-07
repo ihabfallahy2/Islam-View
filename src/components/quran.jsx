@@ -1,20 +1,29 @@
-import React from 'react'
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 import { Link } from "react-router-dom";
 
-import { Tooltip } from '@chakra-ui/react'
-import { Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
+import { Tooltip, Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/react'
 
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { GoHome } from "react-icons/go";
 
-import * as QUR from '../API/QuranApi';
-
 export function Quran(CONF) {
 
+    const ISLAM_CHAPTERS_API_URL = CONF.QURAN.en;
+
     const [quran, setQuran] = useState([])
-    useEffect(() => { QUR.getQuran().then((data) => setQuran(data)) }, []);
+    useEffect(() => { 
+        (async function () {
+            try {
+                const response = await fetch(ISLAM_CHAPTERS_API_URL.endpoint);
+                const data = await response.json();
+                setQuran(data);
+
+            } catch (err) {
+                console.error(err);
+            }
+        })();
+    }, []);
 
     return (
         <>
@@ -35,7 +44,7 @@ export function Quran(CONF) {
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.body} boxShadow='dark-lg'>
                 {
                     quran.map((data) => (
-                        <Link to={"chapter/" + data.id}>
+                        <Link to={"chapter/" + data.id} key={data.id}>
                             <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
                             <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
                                 <Flex align="center">
