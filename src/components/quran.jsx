@@ -7,12 +7,23 @@ import { Tooltip, Box, Text, Heading, Spacer, Icon, Flex } from '@chakra-ui/reac
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { GoHome } from "react-icons/go";
 
-import * as QUR from '../API/QuranApi';
-
 export function Quran(CONF) {
 
+    const ISLAM_CHAPTERS_API_URL = CONF.QURAN.en;
+
     const [quran, setQuran] = useState([])
-    useEffect(() => { QUR.getQuran().then((data) => setQuran(data)) }, []);
+    useEffect(() => { 
+        (async function () {
+            try {
+                const response = await fetch(ISLAM_CHAPTERS_API_URL.endpoint);
+                const data = await response.json();
+                setQuran(data);
+
+            } catch (err) {
+                console.error(err);
+            }
+        })();
+    }, []);
 
     return (
         <>
