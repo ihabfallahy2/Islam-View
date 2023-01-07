@@ -1,10 +1,15 @@
-import { Tooltip } from '@chakra-ui/react'
+import { Box, Heading, Button, Flex, Spacer, Icon , Show , Hide ,Tooltip } from '@chakra-ui/react'
 import { GoOctoface } from "react-icons/go";
 import { GiPrayerBeads } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 
-import { Box, Heading, Button, Flex, Spacer, Icon , Show , Hide} from '@chakra-ui/react'
+function github(){
+    window.open(CONF.configuration.github)
+}
 
+function linkedin(){
+    window.open(CONF.configuration.linkedin)
+}
 
 export function Footer(CONF) {
     return (
@@ -15,10 +20,10 @@ export function Footer(CONF) {
                     <Spacer />
                     <Box>
                         <Tooltip label='Github'>
-                            <Button colorScheme='blackAlpha' m={2} onClick={event => window.open(CONF.configuration.github)}><Icon as={GoOctoface} w={8} h={8} color="blue.20" /></Button>
+                            <Button colorScheme='blackAlpha' m={2} onClick={github}><Icon as={GoOctoface} w={8} h={8} color="blue.20" /></Button>
                         </Tooltip>
                         <Tooltip label='Linkedin'>
-                            <Button colorScheme='blackAlpha' m={2} onClick={event => window.open(CONF.configuration.linkedin)}><Icon as={FaLinkedinIn} w={8} h={8} color="blue.20" /></Button>
+                            <Button colorScheme='blackAlpha' m={2} onClick={linkedin}><Icon as={FaLinkedinIn} w={8} h={8} color="blue.20" /></Button>
                         </Tooltip>
                     </Box>
                     <Show below="sm">
