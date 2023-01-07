@@ -21,12 +21,10 @@ export async function getWeather() {
 
 
 export async function getForecast() {
-	const array = new Array();
 	try{
 		const response = await fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=mula&days=6', options);
 		const data = await response.json();
 
-			// array.push(data.forecast.forecastday[1].day.condition.text);
 
 		const inf = ({
 			"date" : {
@@ -57,14 +55,9 @@ export async function getForecast() {
 //get local
 
 
-
-
-
-
 // Weather Department
 
 export async function WeatherDepartment() {
-    // debugger;
     fetch(WEATHER_API_URL)
         .then(response => response.json())
         .then(response => console.log(response))

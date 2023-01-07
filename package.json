@@ -13,11 +13,14 @@
     "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^7.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.4.4"
+    "react-router-dom": "^6.4.4",
+    "react-scroll-to-top": "^3.0.0",
+    "react-simple-scroll-up": "^0.2.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
