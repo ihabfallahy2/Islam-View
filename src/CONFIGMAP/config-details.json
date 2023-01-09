@@ -2,11 +2,12 @@
     "configuration" : {
         "proyect_version" : "2.4.0",
         "proyect_name" : "Islamic View",
-        "proyect_current_state" : "Weather & Prayer Times app is currently under development",
+        "proyect_current_state" : "is developed by Ihab Fallahy Aallam",
         "url_local" : "http://localhost:5173/",
         "url_prod" : "https://islamview.netlify.app/",
         "github" : "https://github.com/ihabfallahy2",
-        "linkedin" : "https://www.linkedin.com/in/ihab-fallahy-aallam/"
+        "linkedin" : "https://www.linkedin.com/in/ihab-fallahy-aallam/",
+        "REFS_TAGS" : "https://api.github.com/repos/ihabfallahy2/Islam-View/git/refs/tags/"
     },
     "styles" : {
         "body" : "#9395D3",

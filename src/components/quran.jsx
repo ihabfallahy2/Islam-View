@@ -45,15 +45,15 @@ export function Quran(CONF) {
                 {
                     quran.map((data) => (
                         <Link to={"chapter/" + data.id} key={data.id}>
-                            <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg' key={data.id}>
-                            <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
+                            <Box borderRadius="lg" justify="center" align="left" p={4} m={4} bg={CONF.styles.color} boxShadow='dark-lg'>
                                 <Flex align="center">
-                                {data.transliteration} <Spacer/> <Icon as={MdKeyboardArrowRight} color="blue.20" />
-                                </Flex>
+                            <Text fontSize={{ base: '18px', md: '40px', lg: '45px' }}>
+                                {data.transliteration} 
                             </Text>
+                                <Spacer/> <Icon as={MdKeyboardArrowRight} color="blue.20" />
+                                </Flex>
                             </Box>
                         </Link>
-
                     ))
                 }
             </Box>

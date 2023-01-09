@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useToast, Box, Heading, Button, Flex, Spacer, Icon, Hide, Show, Tooltip } from '@chakra-ui/react'
 
 import { GiPrayerBeads } from "react-icons/gi";
@@ -9,13 +9,39 @@ export function Header(CONF) {
     const toast = useToast();
     const id = "informador";
 
+    const [tags, setTags] = useState([])
+
+    useEffect(() => {
+        (async function () {
+            try {
+                const response = await fetch(CONF.configuration.REFS_TAGS);
+                const data = await response.json();
+                
+                let actualTag = 0;
+                for (let e of data) {
+                    let str = e.ref;
+                    let fin = str.replace(/\D/g, "");
+                    if (fin > actualTag) {
+                        actualTag = fin;
+                    }
+                }
+                
+                let transform = actualTag.toString().split('');
+                setTags("v" + transform[0] + "." + transform[1] + "." + transform[2]);
+                
+            } catch (err) {
+                console.error(err);
+            }
+        })();
+    }, []);
+
     function t() {
 
         const tp = {
             id,
-            title: CONF.configuration.proyect_current_state,
+            title: CONF.configuration.proyect_name +" "+ CONF.configuration.proyect_current_state,
             variant: 'left-accent',
-            description: "Version : " + CONF.configuration.proyect_version,
+            description: "Version : " + tags,
             status: 'info',
             duration: 5000,
             isClosable: true,
