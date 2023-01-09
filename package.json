@@ -20,7 +20,8 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.5.0",
     "react-scroll-to-top": "^3.0.0",
-    "react-simple-scroll-up": "^0.2.3"
+    "react-simple-scroll-up": "^0.2.3",
+    "write-json-file": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
