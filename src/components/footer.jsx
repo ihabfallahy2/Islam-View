@@ -1,17 +1,13 @@
-import { Box, Heading, Button, Flex, Spacer, Icon , Show , Hide ,Tooltip } from '@chakra-ui/react'
+import { Box, Heading, Button, Flex, Spacer, Icon, Show, Hide, Tooltip } from '@chakra-ui/react'
 import { GoOctoface } from "react-icons/go";
 import { GiPrayerBeads } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function github(){
-    window.open(CONF.configuration.github)
-}
 
-function linkedin(){
-    window.open(CONF.configuration.linkedin)
-}
 
 export function Footer(CONF) {
+    function github() { window.open(CONF.configuration.github) }
+    function linkedin() { window.open(CONF.configuration.linkedin) }
     return (
         <>
             <Box borderRadius="lg" justify="center" align="center" p={4} m={4} bg={CONF.styles.footer} boxShadow='dark-lg'>
@@ -27,7 +23,7 @@ export function Footer(CONF) {
                         </Tooltip>
                     </Box>
                     <Show below="sm">
-                    <Spacer />
+                        <Spacer />
                     </Show>
                 </Flex>
             </Box>
