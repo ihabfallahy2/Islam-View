@@ -9,16 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.15",
-    "@chakra-ui/react": "^2.4.4",
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/styled": "^11.10.6",
     "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^7.10.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.6.1",
+    "react-router-dom": "^6.8.1",
     "react-scroll-to-top": "^3.0.0",
     "react-simple-scroll-up": "^0.2.3",
     "write-json-file": "^5.0.0"
