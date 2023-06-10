@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.18",
-    "@chakra-ui/react": "^2.5.2",
+    "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.6",
     "eslint-plugin-react-hooks": "^4.6.0",
